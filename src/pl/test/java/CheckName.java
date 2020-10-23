@@ -11,7 +11,7 @@ import java.util.concurrent.TimeUnit;
 
 
 public class CheckName {
-    
+
     public static void main(String[] args) {
 
         System.setProperty("webdriver.chrome.driver", "E:\\Selenium test 2\\driver\\chromedriver.exe"); //select Selenium WebDriver for Chrome
@@ -71,7 +71,7 @@ public class CheckName {
 //        Thread.sleep(1000);
 
         driver.quit(); //close WebDriver
-        checkName(currentName,"poduszka na fotel huśtawkę bocianie gniazdo 65 cm"); //check if the name of the product is as expected
+        checkName(currentName,"FOTEL WISZĄCY HUŚTAWKA KRZESŁO BRAZYLIJSKIE BUJAK"); //check if the name of the product is as expected
 
     }
 
@@ -82,7 +82,7 @@ public class CheckName {
         } else System.out.println("Product name is incorrect");
     }
 
-    private static void clickElement(WebDriver driver1, WebElement element1, int timeout){
+    public static void clickElement(WebDriver driver1, WebElement element1, int timeout){
         new WebDriverWait(driver1,timeout).until(ExpectedConditions.visibilityOf(element1));
         element1.click();
     }

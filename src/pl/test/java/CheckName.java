@@ -23,56 +23,49 @@ public class CheckName {
         driver.get("https://allegro.pl/"); //get the page
         driver.manage().window().maximize(); //maximize the browser window
 
-        WebElement goToButton = driver.findElement(By.cssSelector("body > div.main-wrapper > div:nth-child(8) > div > div._1yyhi >" +
-                " div > div._9f0v0._jkrtd.mpof_ki_s > button._13q9y._8hkto.munh_56_m.m7er_k4.m7er_56_m"));
+        WebElement goToButton = driver.findElement(By.xpath("//button[@class=\"_13q9y _8hkto munh_56_m m7er_k4 m7er_56_m\"]"));
         clickElement(driver,goToButton,10); //close the information window
 //        Thread.sleep(2000);
 
-        WebElement category = driver.findElement(By.cssSelector("body > div.main-wrapper > div:nth-child(2) > header > div >" +
-                " div > div > div > form > div.mpof_5r.mpof_ki_s.mp7g_oh.m389_6m.mjyo_6x.mse2_40.mp4t_0.mr3m_0.mli2_0.m911_co.mnyp_co.mdwl_co.mx7m_1.mefy_5r.mlkp_ag.msts_9u._d25db_1Qn1q >" +
-                " div > select")); // find product category pop-up menu
+        WebElement category = driver.findElement(By.xpath("//select[@class=\"mr3m_1 m7er_k4 _k70df mgn2_14 mp0t_0a mqu1_21 mgmw_wo mli8_k4 _d25db_an94v\"]")); // find product category pop-up menu
 
         Select select = new Select(category); //create Select instance
         select.selectByValue("/kategoria/dom-i-ogrod"); //select a category
 //        Thread.sleep(2000);
 
-        WebElement searchField = driver.findElement(By.cssSelector("body > div.main-wrapper > div:nth-child(2) > header > div > " +
-                "div > div > div > form > input")); //find search field
+        WebElement searchField = driver.findElement(By.xpath("//input[@type='search']")); //find search field
         searchInput(driver,searchField,"huśtawka",10);
 //        Thread.sleep(2000);
 
-        WebElement newProduct = driver.findElement(By.cssSelector("body > div.main-wrapper > div:nth-child(4) > div > div > div > " +
-                "div > div > div._1yyhi._e219d_2fgnH > div._3kk7b._n1rmb._1t6t8._e219d_1YFA5._e219d_2A8fy > div:nth-child(1) > " +
-                "div:nth-child(3) > div > div > div > div > div > fieldset:nth-child(3) > div > ul > li:nth-child(1) > label"));
+        WebElement newProduct = driver.findElement(By.xpath("//span[text()='nowe']"));
         clickElement(driver,newProduct,10); //check only new products filter
 //        Thread.sleep(2000);
 
-        WebElement sortList = driver.findElement(By.cssSelector("body > div.main-wrapper > div:nth-child(4) > div > div > div > div >" +
-                " div > div._1yyhi._e219d_2fgnH > div._3kk7b._otc6c._19orx._e219d_3S9Lf > div._e219d_jjqRf > div._e219d_1LGAZ > " +
-                "div > div > div > div > select")); //find list of filters
+        WebElement sortList = driver.findElement(By.xpath("//select[@data-value='m']")); //find list of filters
 
         Select select1 = new Select(sortList);
         select1.selectByValue("qd"); //select to display products by popularity
 //        Thread.sleep(2000);
 
-        WebElement page = driver.findElement(By.cssSelector("body > div.main-wrapper > div:nth-child(4) > div > div > div > " +
-                "div > div > div._1yyhi._e219d_2fgnH > div._3kk7b._otc6c._19orx._e219d_3S9Lf > div._e219d_jjqRf > div._e219d_2dKPf > " +
-                "div > div > div > div > div > input")); //find page selection field
+        WebElement page = driver.findElement(By.xpath("//input[@data-role='page-number-input']")); //find page selection field
 
         searchInput(driver,page,"23",10); //delete and enter new page number
 //        Thread.sleep(10000);
 
-        WebElement product = driver.findElement(By.cssSelector("body > div.main-wrapper > div:nth-child(4) > div > div > div > div > div > " +
-                "div._1yyhi._e219d_2fgnH > div._3kk7b._otc6c._19orx._e219d_3S9Lf > div:nth-child(3) > div:nth-child(1) > div > div > " +
-                "div:nth-child(2) > div.opbox-listing > div > section > article:nth-child(4) > div > div.mpof_ki.myre_zn._9c44d_1Hxbq > " +
-                "div.m7er_k4._9c44d_3TzmE > h2 > a")); //find the third product on the list
+        WebElement product = driver.findElement(By.cssSelector("div.main-wrapper:nth-child(3) div.opbox-sheet-wrapper.m7er_k4.munh_56.m3h2_56._26e29_2AYAm.mjru_k4:nth-child(2)" +
+                " div.opbox-sheet._26e29_11PCu div.opbox-listing-layout:nth-child(2) " +
+                "div._e219d_2xK5A div._1yyhi._e219d_2fgnH:nth-child(2) div._3kk7b._otc6c._19orx._e219d_3S9Lf:nth-child(1) " +
+                "div.opbox-sheet-wrapper.m7er_k4.munh_56.m3h2_56._26e29_2AYAm.mjru_ey:nth-child(2) div.opbox-sheet._26e29_11PCu.card._9f0v0.msts_n7" +
+                " div.opbox-listing:nth-child(2) div._9c44d_378hD section._9c44d_3pyzl " +
+                "div.mpof_ki.mqen_m6.mp7g_oh.mh36_0.mvrt_0.mg9e_8.mj7a_8.m7er_k4._1y62o._9c44d_1I1gg " +
+                "div.mpof_ki.myre_zn._9c44d_1Hxbq:nth-child(2) div.m7er_k4._9c44d_3TzmE:nth-child(1) h2.mgn2_14.m9qz_yp.mqu1_16.mp4t_0.m3h2_0.mryx_0.munh_0.mp4t_0.m3h2_0.mryx_0.munh_0 > " +
+                "a._w7z6o._uj8z7.meqh_en.mpof_z0.mqu1_16._9c44d_2vTdY")); //find the third product on the list
 
         String currentName = product.getText(); //get name of the product
 //        Thread.sleep(1000);
 
         driver.quit(); //close WebDriver
         checkName(currentName,"FOTEL WISZĄCY HUŚTAWKA KRZESŁO BRAZYLIJSKIE BUJAK"); //check if the name of the product is as expected
-
     }
 
     public static void checkName (String name1, String name2){

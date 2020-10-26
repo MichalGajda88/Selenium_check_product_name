@@ -52,14 +52,7 @@ public class CheckName {
         searchInput(driver,page,"23",10); //delete and enter new page number
 //        Thread.sleep(10000);
 
-        WebElement product = driver.findElement(By.cssSelector("div.main-wrapper:nth-child(3) div.opbox-sheet-wrapper.m7er_k4.munh_56.m3h2_56._26e29_2AYAm.mjru_k4:nth-child(2)" +
-                " div.opbox-sheet._26e29_11PCu div.opbox-listing-layout:nth-child(2) " +
-                "div._e219d_2xK5A div._1yyhi._e219d_2fgnH:nth-child(2) div._3kk7b._otc6c._19orx._e219d_3S9Lf:nth-child(1) " +
-                "div.opbox-sheet-wrapper.m7er_k4.munh_56.m3h2_56._26e29_2AYAm.mjru_ey:nth-child(2) div.opbox-sheet._26e29_11PCu.card._9f0v0.msts_n7" +
-                " div.opbox-listing:nth-child(2) div._9c44d_378hD section._9c44d_3pyzl " +
-                "div.mpof_ki.mqen_m6.mp7g_oh.mh36_0.mvrt_0.mg9e_8.mj7a_8.m7er_k4._1y62o._9c44d_1I1gg " +
-                "div.mpof_ki.myre_zn._9c44d_1Hxbq:nth-child(2) div.m7er_k4._9c44d_3TzmE:nth-child(1) h2.mgn2_14.m9qz_yp.mqu1_16.mp4t_0.m3h2_0.mryx_0.munh_0.mp4t_0.m3h2_0.mryx_0.munh_0 > " +
-                "a._w7z6o._uj8z7.meqh_en.mpof_z0.mqu1_16._9c44d_2vTdY")); //find the third product on the list
+        WebElement product = driver.findElement(By.xpath("//a[@class=\"_w7z6o _uj8z7 meqh_en mpof_z0 mqu1_16 _9c44d_2vTdY m9qz_yq\"]")); //find the third product on the list
 
         String currentName = product.getText(); //get name of the product
 //        Thread.sleep(1000);
